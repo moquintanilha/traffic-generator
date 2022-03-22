@@ -20,7 +20,7 @@ To build your local envronment is very easy.
 
 ```docker-compose up -d influxdb grafana```
 
-## Step 3 - Uhuu, Now run a test example
+### Step 3 - Uhuu, Now run a test example
 
 ```docker-composer run k6 run /scripts/load.js```
 
