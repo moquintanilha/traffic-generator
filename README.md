@@ -24,6 +24,8 @@ To build your local envronment is very easy.
 
 ```docker-compose run k6 run /scripts/load.js```
 
+You have test results access in Grafana Dashboard: ```http://localhost:3000/d/k6/k6-load-testing-results?orgId=1&refresh=5s```
+
 ## You rock
 
 Now you have freedom for customize others test plans.
