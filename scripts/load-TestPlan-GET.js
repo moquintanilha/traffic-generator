@@ -1,6 +1,9 @@
 import http from 'k6/http'
 import { check, sleep } from 'k6'
 
+const BASE_URL = 'http://app-test.producer.melifrontends.com';
+const FURY_TOKEN = ''
+
 export const options = {
     stages: [
         // ramp-up from 1 to 5 VUs in 5s
@@ -25,7 +28,12 @@ export const options = {
 }
 
 export default function() {
-    const response = http.get('http://app:8080/ping')
+    const params = {
+        headers: {
+          'x-auth-token': `${FURY_TOKEN}`,
+        },
+      };
+    const response = http.get(`${BASE_URL}/get_key`, params)
     check(response, { "status is 200": (r) => r.status === 200 })
     sleep(.300)
 }
