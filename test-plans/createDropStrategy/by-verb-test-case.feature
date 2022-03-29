@@ -1,5 +1,5 @@
 # language: en
-Feature: Update rule or route drop
+Feature: Create a new rule or route drop
 
 Scenario: Create a new rule to successfully drop 100% traffic by method
     Given that of the traffic-generator app is sending requests to an app-test
