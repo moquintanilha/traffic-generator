@@ -21,7 +21,7 @@ cd traffic-generator
 ### Step 2 - Launch influxdb and grafana containers
 
 ```javascript
-docker-compose up -d influxdb grafana app
+docker-compose up -d influxdb grafana
 ```
 
 ### Step 3 - Uhuu, Now run a test example
