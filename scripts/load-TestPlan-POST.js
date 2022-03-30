@@ -35,8 +35,7 @@ export default function() {
       };
     const response = http.post(`${BASE_URL}/dummy`, params)
     check(response, {
-        'verify homepage text': (r) =>
-          r.body.includes('Hello World.'),
-      }); 
+        'Text in response is Hello World': (r) => r.body.search("Hello World."),
+    });
     sleep(.300)
 }
