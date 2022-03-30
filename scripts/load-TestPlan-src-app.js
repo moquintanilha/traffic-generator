@@ -31,7 +31,7 @@ export default function() {
     const params = {
         headers: {
           'x-auth-token': `${FURY_TOKEN}`,
-          'x-source-application': 'traffic-generator'
+          'x-source-application': 'app-test.producer.melifrontends.com'
         },
       };
     const response = http.get(`${BASE_URL}/get_key`, params)

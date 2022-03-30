@@ -31,7 +31,7 @@ export default function() {
     const params = {
         headers: {
           'x-auth-token': `${FURY_TOKEN}`,
-          'x-source-scope': 'traffic-generator'
+          'x-source-scope': 'app-test'
         },
       };
     const response = http.get(`${BASE_URL}/get_key`, params)
