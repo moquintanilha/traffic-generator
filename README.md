@@ -14,15 +14,21 @@ To build your local envronment is very easy.
 
 ### Step 1 - Jump to project folder
 
-bash```cd traffic-generator```
+``` bash 
+cd traffic-generator
+```
 
 ### Step 2 - Launch influxdb and grafana containers
 
-bash```docker-compose up -d influxdb grafana app```
+``` bash
+docker-compose up -d influxdb grafana app
+```
 
 ### Step 3 - Uhuu, Now run a test example
 
-bash```docker-compose run k6 run /scripts/load.js```
+``` bash 
+docker-compose run k6 run /scripts/load.js
+```
 
 You have test results access in Grafana Dashboard: ```http://localhost:3000/d/k6/k6-load-testing-results?orgId=1&refresh=5s```
 
