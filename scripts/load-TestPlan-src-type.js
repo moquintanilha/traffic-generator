@@ -7,7 +7,7 @@ const BASE_URL = 'http://test.app-traffic-source.melifrontends.com/call-destinat
 // URL of the app-traffic-destination
 // const BASE_URL = 'http://test.app-traffic-destination.melifrontends.com/show-received-headers';
 
-const FURY_TOKEN = ''
+const FURY_TOKEN = '9ad849018f725e2e081ea1f647853b821388cdd7a1fdbf64021049dafa0dc56f'
 
 export const options = {
     stages: [
@@ -36,15 +36,15 @@ export default function() {
     const params = {
         headers: {
             'x-auth-token': `${FURY_TOKEN}`,
-          
+
             // If the request is made directly to the destination application, the headers below must be uncommented
             // The headers below simulate some of the headers sent by the source application
 
             /*
-            'x-api-client-scope': 'test',
-            'x-api-client-criticality': 'test',
+            'x-api-client-type': 'WebService',
             'x-api-client-application': 'app-traffic-source',
-            'x-api-client-type': 'WebService'
+            'x-api-client-scope': 'test',
+            'x-api-client-criticality': 'test'
             */
         },
       };

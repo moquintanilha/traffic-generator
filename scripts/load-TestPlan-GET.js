@@ -1,7 +1,12 @@
 import http from 'k6/http'
 import { check, sleep } from 'k6'
 
-const BASE_URL = 'http://app-test.producer.melifrontends.com';
+// URL of the app-traffic-source.
+const BASE_URL = 'http://test.app-traffic-source.melifrontends.com/call-destination-app';
+
+// URL of the app-traffic-destination
+// const BASE_URL = 'http://test.app-traffic-destination.melifrontends.com/show-received-headers';
+
 const FURY_TOKEN = ''
 
 export const options = {
@@ -30,10 +35,20 @@ export const options = {
 export default function() {
     const params = {
         headers: {
-          'x-auth-token': `${FURY_TOKEN}`,
+            'x-auth-token': `${FURY_TOKEN}`,
+
+            // If the request is made directly to the destination application, the headers below must be uncommented
+            // The headers below simulate some of the headers sent by the source application
+            
+            /*
+            'x-api-client-type': 'WebService',
+            'x-api-client-application': 'app-traffic-source',
+            'x-api-client-scope': 'test',
+            'x-api-client-criticality': 'test'
+            */
         },
       };
-    const response = http.get(`${BASE_URL}/get_key`, params)
+    const response = http.get(`${BASE_URL}`, params)
     check(response, { "status is 200": (r) => r.status === 200 })
     sleep(.300)
 }
